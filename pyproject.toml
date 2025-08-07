@@ -3,9 +3,11 @@ name = "cc-django"
 version = "0.1.0"
 description = "Cookiecutter for Django projects singularIT"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "cookiecutter>=2.6.0",
+    "pre-commit>=4.2.0",
+]
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.2.0",
 ]
