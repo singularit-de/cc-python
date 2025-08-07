@@ -1,0 +1,14 @@
+django-test:
+  stage: test
+  interruptible: true
+  image: orbisk/django-test:{{ cookiecutter.python_version }}
+  extends:
+    - .size:medium
+  services:
+    - postgres:{{ cookiecutter.postgresql_version }}
+  variables:
+    DJANGO_SETTINGS_MODULE: "{{ cookiecutter.project_slug }}.settings.test"
+    POSTGRES_HOST: "postgres"
+    POSTGRES_PORT: "5432"
+  script:
+    - uv run manage.py test

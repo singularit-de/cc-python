@@ -1,0 +1,20 @@
+pre-commit:
+  stage: lint
+  interruptible: true
+  extends:
+    - .size:medium
+  image: astral/uv:python{{ cookiecutter.python_version }}-bookworm
+  variables:
+    PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
+  cache:
+    paths:
+      - ${PRE_COMMIT_HOME}
+      - ${UV_CACHE_DIR}
+    key:
+      files:
+        - uv.lock
+        - .pre-commit-config.yaml
+  script:
+    - uvx pre-commit run --show-diff-on-failure --color=always --all-files
+  after_script:
+    - uv cache prune --ci

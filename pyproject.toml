@@ -1,7 +1,7 @@
 [project]
 name = "cc-django"
 version = "0.1.0"
-description = "Cookiecutter for Django projects singularIT"
+description = "Cookiecutters for python projects @singularIT"
 requires-python = ">=3.12"
 dependencies = [
     "cookiecutter>=2.6.0",
