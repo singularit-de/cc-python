@@ -10,10 +10,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN uv sync
-
 COPY . .
 
 FROM base as app
 
-RUN uv run manage.py collectstatic --no-input
+RUN uv run --no-dev --group production manage.py collectstatic --no-input

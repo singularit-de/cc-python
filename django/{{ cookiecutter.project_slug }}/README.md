@@ -1,4 +1,5 @@
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.project_name }} ({{ cookiecutter.customer }})
+
 
 ## Tech stack
 
@@ -7,40 +8,45 @@
 - PostgreSQL {{ cookiecutter.postgresql_version }}
 - Django
 
+
+**------------------- BEGIN DELETE SECTION --------------------**
+
 ## Get started after cookiecutter
 
-1. Adjust the code as you need
-2. Resolve the remaining TODOs in the code
-3. Create a remote git repository
-4. Initialize git in the project
+1. Create a new remote git repository [here](https://singular-code.de/projects/new)
+   1. Create the following CI/CD variables (under Settings > CI/CD > Variables > Project variables):
+       - `DJANGO_SECRET_KEY`
+         - Visibility: `Masked`
+         - Protect variable: `yes`
+         - Expand variable reference: `no`
+         - Key: `DJANGO_SECRET_KEY`
+         - Value:
+         ```shell
+         python -c "import secrets; print(secrets.token_urlsafe(50))"
+         ```
+2. Initialize git in the project
 
    ```bash
-   git init -b main
+   git init --initial-branch=main
    ```
-5. Enable pre-commit hooks:
+3. Enable pre-commit hooks:
 
    ```bash
    pre-commit install
    ```
 
-6. Add and commit the initial code:
+4. Delete this section
+
+5. Create an initial commit and push to the remote repository:
 
    ```bash
    git add .
    git commit -m "Initial commit"
    git remote add origin <your-repo-url>
-   git push origin main
+   git push --set-upstream origin main
    ```
 
-5. Go to the remote git repository and create a CI/CD variable (under Settings > CI/CD > Variables > Project variables):
-
-    - `DJANGO_SECRET_KEY`
-      - Visibility: `Masked`
-      - Protect variable: `yes`
-      - Expand variable reference: `no`
-      - Key: `DJANGO_SECRET_KEY`
-      - Value: generate it using `python -c "import secrets; print(secrets.token_urlsafe(50))"`
-6. Delete this section and make a second commit
+**------------------- END DELETE SECTION --------------------**
 
 ## Get started locally
 

@@ -38,7 +38,7 @@ INSTALLED_APPS = [
 
 # Security
 
-SECRET_KEY = env.str("DJANGO_SECRET_KEY", "{{ random_ascii_string(48) }}")
+SECRET_KEY = env.str("DJANGO_SECRET_KEY", "{{ random_ascii_string(50) }}")
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
