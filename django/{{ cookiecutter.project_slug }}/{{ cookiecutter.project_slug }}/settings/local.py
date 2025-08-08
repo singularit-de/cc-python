@@ -18,6 +18,11 @@ CSRF_TRUSTED_ORIGINS = [
     FRONTEND_URL,
 ]
 
+{% if cookiecutter.use_drf == "y" %}
+# CORS
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+{% endif %}
 # Django Debug Toolbar
 INSTALLED_APPS += ["debug_toolbar"]  # noqa: F405
 MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]  # noqa: F405

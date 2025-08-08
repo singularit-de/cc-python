@@ -13,5 +13,6 @@
   "username_type": [
     "email",
     "username"
-  ]
+  ],
+  "use_drf": "y"
 }

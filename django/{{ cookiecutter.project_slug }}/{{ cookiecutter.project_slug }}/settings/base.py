@@ -158,3 +158,31 @@ LOGGING = {
         "console": {"class": "logging.StreamHandler", "formatter": "verbose"},
     },
 }
+
+{% if cookiecutter.use_drf %}
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticated",
+    ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "TEST_REQUEST_DEFAULT_FORMAT": "json",
+    "EXCEPTION_HANDLER": "{{ cookiecutter.project_slug }}.drf_exception_handler.handle",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "{{ cookiecutter.project_name }} API",
+    "DESCRIPTION": "API documentation for {{ cookiecutter.project_name }}",
+    "VERSION": "0.1",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "COMPONENT_SPLIT_REQUEST": True,
+    "SERVE_PERMISSIONS": [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
+
+{% endif %}

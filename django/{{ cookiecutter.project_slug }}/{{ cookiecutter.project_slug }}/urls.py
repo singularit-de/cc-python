@@ -19,9 +19,18 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-
+{% if cookiecutter.use_drf == "y" %}
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+)
+{% endif %}
 urlpatterns = [
     path(".admin/", admin.site.urls),
+    {% if cookiecutter.use_drf == "y" %}
+    path("api/", SpectacularSwaggerView.as_view(), name="swagger-ui"),
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    {% endif %}
 ]
 
 if settings.DEBUG and "debug_toolbar" in settings.INSTALLED_APPS:
