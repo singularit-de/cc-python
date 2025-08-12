@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 {% if cookiecutter.use_drf %}
     "rest_framework",
     "drf_spectacular",
-{% endif}
+{% endif %}
 ]
 
 # Security
