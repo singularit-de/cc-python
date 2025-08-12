@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+{% if cookiecutter.use_drf %}
+    "rest_framework",
+    "drf_spectacular",
+{% endif}
 ]
 
 # Security

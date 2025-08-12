@@ -29,15 +29,24 @@
    ```bash
    git init --initial-branch=main
    ```
-3. Enable pre-commit hooks:
+
+3. Create a venv and install dependencies:
+
+   ```bash
+   uv venv
+   source .venv/bin/activate
+   uv sync
+   ```
+   
+4. Enable pre-commit hooks:
 
    ```bash
    pre-commit install
    ```
 
-4. Delete this section
+5. **Delete this section, because its only for the initial setup**
 
-5. Create an initial commit and push to the remote repository:
+6. Create an initial commit and push to the remote repository:
 
    ```bash
    git add .
