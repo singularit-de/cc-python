@@ -20,7 +20,7 @@ jobs:
       - name: Run Django Template Tests
         run: |
           uvx cookiecutter django -v --no-input -o test/ \
-            python_version=${{ matrix.python_version }} \
-            postgresql_version=${{ matrix.postgresql_version }} \
-            username_type=${{ matrix.username_type }} \
-            use_drf=${{ matrix.use_drf }}
+            python_version="${{ matrix.python_version }}" \
+            postgresql_version="${{ matrix.postgresql_version }}" \
+            username_type="${{ matrix.username_type }}" \
+            use_drf="${{ matrix.use_drf }}"
