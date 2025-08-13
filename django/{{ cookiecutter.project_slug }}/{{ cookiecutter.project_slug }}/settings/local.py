@@ -1,7 +1,4 @@
-from .base import *  # noqa: F403
-
-env = environ.Env()
-env.read_env(BASE_DIR / ".env.local")
+from .base import *
 
 FRONTEND_URL = "http://localhost:5173"
 

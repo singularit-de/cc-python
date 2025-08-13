@@ -4,3 +4,4 @@ include:
       http: app
       auth: "*>public>*"
       compose-file: .gitlab/docker-compose.staging.yml
+      auto-stop-in: 6 months

@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 env = environ.Env()
 env.read_env(BASE_DIR / ".env")
+env.read_env(BASE_DIR / ".env.local", overwrite=True)
 
 
 TESTING = "test" in sys.argv
