@@ -5,12 +5,12 @@ description = ""
 readme = "README.md"
 requires-python = ">={{ cookiecutter.python_version }}"
 dependencies = [
-    "django>=5.2.3",
+    "django>=5.2.5",
     "django-admin-interface>=0.30.1",
     "django-debug-toolbar>=5.2.0",
     {% if cookiecutter.use_drf == "y" %}
     "django-filter>=25.1",
-    "djangorestframework>=3.16.0",
+    "djangorestframework>=3.16.1",
     "django-cors-headers>=4.7.0",
     "drf-spectacular>=0.28.0",
     {% endif %}
@@ -22,7 +22,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.2.0",
+    "pre-commit>=4.3.0",
 ]
 production = [
     "gunicorn>=23.0.0",
