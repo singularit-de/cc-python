@@ -14,4 +14,7 @@ COPY . .
 
 FROM base as app
 
-RUN uv run --no-dev --group production manage.py collectstatic --no-input
+ENV UV_NO_DEV 1
+RUN uv sync --group production
+ENV UV_NO_SYNC 1
+RUN uv run manage.py collectstatic --no-input

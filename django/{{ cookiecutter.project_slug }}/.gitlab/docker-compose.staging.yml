@@ -15,7 +15,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    command: [ "uv", "run","--no-dev", "--group", "production", "manage.py", "migrate" ]
+    command: [ "uv", "run", "manage.py", "migrate" ]
 
   app:
     extends:
@@ -25,7 +25,7 @@ services:
       dockerfile: .gitlab/Dockerfile
       target: app
     restart: unless-stopped
-    command: ["uv", "run","--no-dev", "--group", "production", "gunicorn", "-b", ":8000", "--workers=3", "--enable-stdio-inheritance", "{{ cookiecutter.project_slug }}.wsgi:application"]
+    command: ["uv", "run", "gunicorn", "-b", ":8000", "--workers=3", "--enable-stdio-inheritance", "{{ cookiecutter.project_slug }}.wsgi:application"]
     expose:
       - 8000
   postgres:

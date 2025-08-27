@@ -12,6 +12,7 @@ variables:
   POSTGRES_DB: {{ cookiecutter.project_slug }}
   POSTGRES_USER: {{ cookiecutter.project_slug }}
   POSTGRES_PASSWORD: {{ cookiecutter.project_slug }}
+  UV_LINK_MODE: copy
 
 workflow:
   rules:

@@ -12,3 +12,18 @@ django-test:
     POSTGRES_PORT: "5432"
   script:
     - uv run manage.py test
+
+deploy-check:
+  stage: test
+  interruptible: true
+  allow_failure: true
+  image: orbisk/django-test:3.12
+  extends:
+    - .size:medium
+  variables:
+    DJANGO_SETTINGS_MODULE: "{{ cookiecutter.project_slug }}.settings.staging"
+  script:
+    - uv run manage.py check --deploy --fail-level DEBUG --force-color
+  rules:
+    - if: $CI_COMMIT_REF_PROTECTED
+      allow_failure:  false
