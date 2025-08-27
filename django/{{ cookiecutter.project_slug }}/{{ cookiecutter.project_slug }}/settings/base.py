@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
 # Security
 
-SECRET_KEY = env.str("DJANGO_SECRET_KEY", "{{ random_ascii_string(50) }}")
+SECRET_KEY = env.str("DJANGO_SECRET_KEY", "django-insecure-{{ random_ascii_string(20) }}")
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 

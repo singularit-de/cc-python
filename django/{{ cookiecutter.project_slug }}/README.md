@@ -14,11 +14,13 @@
 ## Get started after cookiecutter
 
 1. Create a new remote git repository [here](https://singular-code.de/projects/new)
-   1. Create the following CI/CD variables (under Settings > CI/CD > Variables > Project variables):
+   1. Create the following CI/CD variables (under `Settings` > `CI/CD` > `Variables` > `Project variables` > `Add variable`):
        - `DJANGO_SECRET_KEY`
+         - Type: `Variable (default)` 
+         - Environments: `All (default)`
          - Visibility: `Masked`
-         - Protect variable: `yes`
-         - Expand variable reference: `no`
+         - Flags - Protect variable: `yes`
+         - Flags - Expand variable reference: `no`
          - Key: `DJANGO_SECRET_KEY`
          - Value:
          ```shell
@@ -33,8 +35,10 @@
 3. Create a venv and install dependencies:
 
    ```bash
-   uv venv
-   source .venv/bin/activate
+   uv venv --allow-existing
+   # Windows
+   .venv\Scripts\activate
+   # Linux: source .venv/bin/activate
    uv sync
    ```
    
@@ -62,8 +66,10 @@
 1. Create a virtual environment using uv:
 
    ```bash
-   uv venv
-   source .venv/bin/activate
+   uv venv --allow-existing
+   # Windows
+   .venv\Scripts\activate
+   # Linux: source .venv/bin/activate
    uv sync
    ```
 
