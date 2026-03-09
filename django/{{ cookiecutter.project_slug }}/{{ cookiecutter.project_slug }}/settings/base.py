@@ -49,6 +49,9 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 
 MIDDLEWARE = [
+{% if cookiecutter.use_drf %}
+    "corsheaders.middleware.CorsMiddleware",
+{% endif %}
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
