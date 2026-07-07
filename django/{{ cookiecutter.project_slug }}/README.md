@@ -87,3 +87,40 @@
    ```bash
    pre-commit install
    ```
+
+## Gitlab CI/CD
+
+### Dependency Track
+
+The uv.lock file is used to track vulnerabilities in dependencies.
+Every push to a protected branch or a created tag will trigger an update of the Dependency Track Dashboard.
+You can view the Dependency Track Dashboard [here](https://dependency-track.v3.singular-it-test.de/).
+
+### Stages
+
+#### Lint
+
+In the lint stage we are running `pre-commit'` that checks for code formatting and linting issues.
+
+When? Each push to a protected branch or a branch that has an open pull request to a protected branch.
+
+#### Test
+
+Our test stage has 3 jobs:
+
+1. `django-test` - runs the django unit tests
+2. `deploy-check` - runs the django deployment check for security issues
+3. `sbom:uv:prod` - generates a Software Bill of Materials (SBOM) for the Dependency Track Dashboard. There is a separate .post stage where the SBOM is uploaded to the Dependency Track Dashboard.
+
+When? Each push to a protected branch or a branch that has an open pull request to a protected branch.
+
+#### Deploy
+
+In the deploy stage we are deploying to our v2 staging server.
+
+When? Each push to a protected branch or a branch that has an open pull request to a protected branch.
+ staging server.
+
+#### .post
+
+In the .post stage we are uploading the SBOM to the Dependency Track Dashboard.
