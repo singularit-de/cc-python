@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python_version: [3.12, 3.13]
-        postgresql_version: [16, 17]
+        python_version: [3.12, 3.13, 3.14]
+        postgresql_version: [16, 17, 18]
         username_type: [email, username]
         use_drf: [y, n]
     steps:
