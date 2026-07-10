@@ -31,8 +31,9 @@ class Migration(migrations.Migration):
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.permission', verbose_name='user permissions')),
             ],
             options={
-                'verbose_name': 'user',
-                'verbose_name_plural': 'users',
+                'ordering':{% if cookiecutter.username_type == "username" %}['username']{% else %}['email']{% endif %},
+                'verbose_name': 'User',
+                'verbose_name_plural': 'Users',
                 'abstract': False,
             },
         ),
