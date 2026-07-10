@@ -15,8 +15,8 @@
 2. Run the following command to create a new Django project using the newest template version:
     ```shell
     cookiecutter https://github.com/singularit-de/cc-python.git --directory django
-   # or
-   uvx cookiecutter https://github.com/singularit-de/cc-python.git --directory django
+    # or
+    uvx cookiecutter https://github.com/singularit-de/cc-python.git --directory django
     ```
 
    1. If you want to use a specific version/branch you can use the `--checkout <tag/branch>` option:
@@ -25,6 +25,14 @@
    ```
 
 ## Why we are using templates
+
+Cookiecutter templates ensure consistency, standardization, and best practices across all Python projects at singularIT. They:
+
+- **Reduce setup time** by automating project initialization and boilerplate configuration
+- **Enforce conventions** with a standardized directory structure, naming patterns, and tooling (ruff, pre-commit, etc.)
+- **Ensure quality** by baking in linting, formatting, and testing configurations from the start
+- **Simplify maintenance** by allowing template updates to benefit all projects using them
+- **Enable team alignment** on development practices and technology choices
 
 ## Testing template updates locally
 
