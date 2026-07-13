@@ -56,6 +56,7 @@ class User(AbstractUser):
     def __str__(self):
         return self.email
 {% else %}
+        ordering = ["username"]
 
     def __repr__(self):
         return f"User({self.username})"
