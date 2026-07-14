@@ -3,12 +3,14 @@
   "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
   "customer": "internal",
   "python_version": [
-    "3.12",
-    "3.13"
+    "3.14",
+    "3.13",
+    "3.12"
   ],
   "postgresql_version": [
-    "16",
-    "17"
+    "18",
+    "17",
+    "16"
   ],
   "username_type": [
     "email",
