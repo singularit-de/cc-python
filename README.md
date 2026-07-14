@@ -24,6 +24,7 @@
    cookiecutter https://github.com/singularit-de/cc-python.git --directory django --checkout v1.1.0
    ```
 
+For Django projects, see the [Django README](django/README.md) for details on the template and the questions you’ll be asked during project creation.
 ## Why we are using templates
 
 Cookiecutter templates ensure consistency, standardization, and best practices across all Python projects at singularIT. They:

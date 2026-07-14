@@ -59,6 +59,8 @@
    git push --set-upstream origin main
    ```
 
+7. Add our [Renovate Dog](https://singular-code.de/renovate.dog) to the GitLab repository and follow the instructions in the [BetterWiki article](https://singularit.singular-pages.de/better-wiki/wiki/tools/renovate-bot/#wie-kann-ich-den-renovate-bot-benutzen).
+
 **------------------- END DELETE SECTION --------------------**
 
 ## Get started locally
