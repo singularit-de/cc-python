@@ -38,7 +38,8 @@
    uv venv --allow-existing
    # Windows
    .venv\Scripts\activate
-   # Linux: source .venv/bin/activate
+   # Linux:
+   source .venv/bin/activate
    uv sync
    ```
    
