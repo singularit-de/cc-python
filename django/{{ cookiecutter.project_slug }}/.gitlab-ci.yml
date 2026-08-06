@@ -7,6 +7,16 @@ include:
   - local: .gitlab/ci/*.gitlab-ci.yml
   - component: $CI_SERVER_FQDN/singularit/ci-components/utilities/size/all@1.2.0
   - component: $CI_SERVER_FQDN/singularit/ci-components/security/dependency-audit/sbom@0.3.6
+  - component: $CI_SERVER_FQDN/singularit/ci-components/gitlab/sast/sast@3.4.0
+    inputs:
+      enable_mr_pipelines: true
+  - component: $CI_SERVER_FQDN/singularit/ci-components/gitlab/sast/iac-sast@3.4.0
+    inputs:
+      enable_mr_pipelines: true
+  - component: $CI_SERVER_FQDN/singularit/ci-components/secret-detection/secret-detection@2.3.0
+    inputs:
+      enable_mr_pipelines: true
+  
 
 variables:
   POSTGRES_HOST_AUTH_METHOD: trust
