@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>singularit-de/renovate-config#0.0.10",
+    "group:allNonMajor"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor"],
+      "minimumReleaseAge": "4 days"
+    },
+        {
+      "matchUpdateTypes": ["patch"],
+      "minimumReleaseAge": "2 days"
+    },
+    {
+      "groupName": "python",
+      "matchPackagePatterns": ["^python$", "^orbisk/django-test$"]
+    }
+  ]
+}
