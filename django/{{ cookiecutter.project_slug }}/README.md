@@ -47,10 +47,17 @@
    ```bash
    pre-commit install
    ```
+   
+5. Add a minimal code ownership to `.gitlab/CODEOWNERS`:
 
-5. **Delete this section, because its only for the initial setup**
+   ```
+   * @<your-gitlab-username>
+   ```
+   You can read more about it in our [BetterWiki article](https://singularit.singular-pages.de/better-wiki/wiki/tools/renovate-bot/#optional-auto-assign-mrs).
 
-6. Create an initial commit and push to the remote repository:
+6. **Delete this section, because it's only for the initial setup**
+
+7. Create an initial commit and push to the remote repository:
 
    ```bash
    git add .
@@ -59,7 +66,7 @@
    git push --set-upstream origin main
    ```
 
-7. Add our [Renovate Dog](https://singular-code.de/renovate.dog) to the GitLab repository and follow the instructions in the [BetterWiki article](https://singularit.singular-pages.de/better-wiki/wiki/tools/renovate-bot/#wie-kann-ich-den-renovate-bot-benutzen).
+8. Add our [Renovate Dog](https://singular-code.de/renovate.dog) to the GitLab repository and follow the instructions in the [BetterWiki article](https://singularit.singular-pages.de/better-wiki/wiki/tools/renovate-bot/#wie-kann-ich-den-renovate-bot-benutzen).
 
 **------------------- END DELETE SECTION --------------------**
 
