@@ -23,7 +23,54 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pre-commit>=4.6.0",
+    "coverage>=7.17.4",
 ]
 production = [
     "gunicorn>=26.0.0",
 ]
+
+[tool.coverage.run]
+source = ["."]
+branch = true
+relative_files = true
+parallel = true
+concurrency = ["multiprocessing"]
+
+omit = [
+    "*/migrations/*",
+    "*/tests/*",
+    "*/tests.py",
+    "manage.py",
+    "*/asgi.py",
+    "*/wsgi.py",
+    "*/settings/*",
+    "*/settings.py",
+    ".venv/*",
+    "*/node_modules/*",
+]
+
+[tool.coverage.report]
+skip_covered = true
+skip_empty = true
+precision = 1
+
+exclude_also = [
+    "def __repr__",
+    "if TYPE_CHECKING:",
+    "if typing.TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "raise AssertionError",
+    "if settings.DEBUG",
+    "if __name__ == .__main__.:",
+    "@(abc\\.)?abstractmethod",
+    "class .*\\bProtocol\\):",
+    "^\\s*\\.\\.\\.$",
+]
+
+
+[tool.coverage.html]
+directory = "htmlcov"
+show_contexts = true
+
+[tool.coverage.xml]
+output = "coverage.xml"
